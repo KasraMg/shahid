@@ -61,7 +61,7 @@ const Login = ({
   }, []);
 
   return (
-    <div className="w-full sm:!pb-20">
+    <div className="w-full sm:!pb-20" dir="rtl">
       <p className="text-lg font-bold">ورود / ثبت‌نام</p>
       <span className="mt-3 block text-sm font-thin">
         برای ورود یا ثبت‌نام، شماره همراه خود را وارد کنید

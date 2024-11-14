@@ -7,7 +7,7 @@ import Password from "../../components/templates/login/main/components/Password"
 import Login from "../../components/templates/login/main/components/Login";
 
 const Index = () => {
-  const [step, setStep] = useState<string>("login");
+  const [step, setStep] = useState<string>("otp");
 
   useEffect(() => {
     const registerPhoneNumber = getFromLocalStorage("otpRegisterPhoneNumber");
@@ -30,8 +30,8 @@ const Index = () => {
   return (
     <div>
       <Header />
-      <div className="flex items-center   pt-32 ">
-        <div className="w-1/2 mr-36 ">
+      <div className="flex items-center pt-32 lg:pt-20">
+        <div className="z-50 ml-auto mr-36 w-1/2 sm:!px-5 lg:mr-auto lg:!w-full lg:px-28 xl:w-1/3">
           {step === "login" && <Login setStep={setStep} />}
           {step === "otp" && <Otp setStep={setStep} />}
           {step === "register" && <Register setStep={setStep} />}
@@ -40,13 +40,13 @@ const Index = () => {
 
         <img
           src="/images/flower.png"
-          className=" absolute left-0 bottom-0"
-          style={{transform:'rotateY:180deg'}}
+          className="absolute bottom-0 left-0 md:!h-auto md:!object-contain lg:h-[200px] lg:w-1/3 lg:object-contain"
+          style={{ transform: "rotateY(180deg)" }}
           alt=""
         />
       </div>
     </div>
-  );    
+  );
 };
 
 export default Index;

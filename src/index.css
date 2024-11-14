@@ -27,8 +27,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "NEIRIZI", "BNAZANIN", "NotoNastaliqUrdu";
-  direction: rtl;
+  font-family: "NEIRIZI", "BNAZANIN", "NotoNastaliqUrdu"; 
 }
 html {
   overflow-x: hidden;

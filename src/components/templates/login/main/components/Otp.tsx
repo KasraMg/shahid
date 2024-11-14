@@ -100,7 +100,7 @@ const Otp = ({
   };
 
   return (
-    <div className="w-full md:!w-[350px]">
+    <div className="w-full " dir="rtl">
       <div className="flex items-center justify-between">
         <p dir="ltr">+98{phoneNumber?.slice(1, 11)}</p>
         <Button
@@ -109,16 +109,17 @@ const Otp = ({
           variant={"default"}
         >
           ویرایش
-        </Button>
+      </Button>
       </div>
-      <p className="mt-4 text-sm sm:!mt-2">
+      <p className="mt-4 text-sm sm:!mt-2 text-center">
         کد فعالسازی 4 رقمی به شماره موبایل شما پیامک شد
       </p>
-      <div className="relative my-6 flex flex-col items-start justify-between gap-2 sm:!flex-row sm:!items-center sm:!gap-0">
+      <div className="relative my-6 flex flex-col items-start justify-center gap-2 sm:!flex-row  items-center sm:!gap-0">
         <p className="text-sm">کد فعالسازی را وارد کنید</p>
         <InputOTP
           value={otpCode}
           type="text"
+          dir="ltr"
           inputMode="numeric"
           onChange={(value) => setOtpCode(value)}
           maxLength={4}
@@ -132,7 +133,7 @@ const Otp = ({
           </InputOTPGroup>
         </InputOTP>
       </div>
-      <span className="mb-3 block text-center text-xs text-red-600">
+      <span className="mb-3 block text-center text-xs text-red-600" dir="rtl">
         در صورت نیامدن کد، پیامک های spam گوشیتون رو هم چک کنید
       </span>
       <Timer />

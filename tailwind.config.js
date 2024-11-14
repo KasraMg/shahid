@@ -42,7 +42,7 @@ export default {
 			sm: { max: "500px" }, 
 			md: { max: "768px" },
 			lg: { max: "1024px" },
-			xl: { min: "1200px" },
+			xl: { max: "1200px" },
 		},
 	
 	},

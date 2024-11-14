@@ -84,9 +84,10 @@ const Password = ({
   };
  
   return (
-    <div className="w-full sm:!pb-7 md:!w-[350px]">
+    <div className="w-full  " dir="rtl">
       <div className="flex items-center justify-between">
-        <p dir="ltr">+98{phoneNumber.slice(1, 11)}</p>
+        {/* <p dir="ltr">+98{phoneNumber.slice(1, 11)}</p> */}
+        <p dir="ltr">+98 </p>
         <Button
           onClick={() => setStep("login")}
           className="!rounded-sm !px-4"
