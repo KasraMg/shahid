@@ -2,8 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "NEIRIZI";
+    src: url("./fonts/NEIRIZI.TTF") format("truetype");
+  }
+
+  @font-face {
+    font-family: "NotoNastaliqUrdu";
+    src: url("./fonts/NotoNastaliqUrdu-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "NotoNastaliqUrduBold";
+    src: url("./fonts/NotoNastaliqUrdu-Bold.ttf") format("truetype");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: "BNAZANIN";
+    src: url("./fonts/BNAZANIN.TTF") format("truetype");
+  }
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "NEIRIZI", "BNAZANIN", "NotoNastaliqUrdu";
+  direction: rtl;
+}
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: #e8d4ba;
+}
+button {
+  cursor: pointer;
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition:
+    background-color 600000s 0s,
+    color 600000s 0s;
+}
+
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  font-family: sans-serif !important;
+
+  -moz-appearance: textfield;
 }
