@@ -37,6 +37,8 @@ html {
 
 body {
   background: #e8d4ba;
+  min-height: 100vh;
+  height: 100%;
 }
 button {
   cursor: pointer;

@@ -97,7 +97,7 @@ const Users = () => {
   ];
   return (
     <Layout>
-      <Title className="sm:justify-center" title={"کاربران"} />
+      <Title className="sm:justify-center" title={"مدیریت کاربران"} />
 
       <div>
         <DataTable
