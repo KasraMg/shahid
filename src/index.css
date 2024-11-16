@@ -5,23 +5,25 @@
 @layer base {
   @font-face {
     font-family: "NEIRIZI";
-    src: url("./fonts/NEIRIZI.TTF") format("truetype");
+    src: url("../public/fonts/NEIRIZI.TTF") format("truetype") ;
   }
-
+   
   @font-face {
     font-family: "NotoNastaliqUrdu";
-    src: url("./fonts/NotoNastaliqUrdu-Regular.ttf") format("truetype");
+    src: url("../public/fonts/NotoNastaliqUrdu-Regular.ttf") format("truetype");
   }
   @font-face {
     font-family: "NotoNastaliqUrduBold";
-    src: url("./fonts/NotoNastaliqUrdu-Bold.ttf") format("truetype");
+    src: url("../public/fonts/NotoNastaliqUrdu-Bold.ttf") format("truetype");
     font-weight: 700;
   }
 
   @font-face {
     font-family: "BNAZANIN";
-    src: url("./fonts/BNAZANIN.TTF") format("truetype");
+    src: url("../public/fonts/BNAZANIN.TTF") format("truetype");
   }
+
+ 
 }
 * {
   margin: 0;

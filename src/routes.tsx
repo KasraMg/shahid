@@ -1,7 +1,18 @@
-import Home from "./pages/Home"; 
+import Home from "./pages/Home";
 import Login from "./pages/login/Index";
- 
+import ContentManagement from "./pages/AdminPanel/ContentManagement/ContentManagement";
+import Users from "./pages/AdminPanel/Users/Users";
 
+const adminPanelRoutes = [
+  {
+    path: "/adminPanel/contentManagement",
+    element: <ContentManagement />,
+  },
+  {
+    path: "/adminPanel/Users",
+    element: <Users />,
+  },
+];
 const routes = [
   {
     path: "/",
@@ -11,8 +22,8 @@ const routes = [
     path: "/login",
     element: <Login />,
   },
-   
-  // ...test,
+
+  ...adminPanelRoutes,
 ];
 
 export default routes;
