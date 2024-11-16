@@ -15,49 +15,49 @@ const ContentManagement = () => {
 
       <div className="grid sm:!grid-cols-[1fr,1fr] md:grid-cols-[1fr,1fr,1fr] grid-cols-[1fr,1fr,1fr,1fr] gap-4 mt-12">
         <Link
-          to={"/contentManagement/packages"}
+          to={"/adminPanel/contentManagement/packages"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <LuPackagePlus className="mx-auto mb-7 text-4xl" />
           <p className="mb-4">پکیج ها</p>
         </Link>
         <Link
-          to={"/contentManagement/packages"}
+          to={"/adminPanel/contentManagement/packages"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <MdOutlineNewLabel className="mx-auto mb-7 text-4xl" />
           <p className="mb-4">برچسب ها</p>
         </Link>
         <Link
-          to={"/contentManagement/packages"}
+          to={"/adminPanel/contentManagement/packages"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <AiOutlineMenu className="mx-auto mb-7 text-4xl" />
           <p className="mb-4">منو و لوگو ها</p>
         </Link>
         <Link
-          to={"/contentManagement/packages"}
+          to={"/adminPanel/contentManagement/packages"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <RiVoiceprintFill className="mx-auto mb-7 text-4xl" />
           <p className="mb-4">سوره ها</p>
         </Link>
         <Link
-          to={"/contentManagement/packages"}
+          to={"/adminPanel/contentManagement/packages"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <IoNewspaperOutline className="mx-auto mb-7 text-4xl" />
           <p className="mb-4">اخبار</p>
         </Link>
         <Link
-          to={"/contentManagement/packages"}
+          to={"/adminPanel/contentManagement/packages"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <MdOutlineArticle className="mx-auto mb-7 text-4xl" />
           <p className="mb-4">مقلات</p>
         </Link>
         <Link
-          to={"/contentManagement/packages"}
+          to={"/adminPanel/contentManagement/packages"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <PiFlagBannerFold className="mx-auto mb-7 text-4xl" />
