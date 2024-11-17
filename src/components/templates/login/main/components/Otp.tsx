@@ -100,21 +100,21 @@ const Otp = ({
   };
 
   return (
-    <div className="w-full " dir="rtl">
+    <div className="w-full" dir="rtl">
       <div className="flex items-center justify-between">
-        <p dir="ltr">+98{phoneNumber?.slice(1, 11)}</p>
+        <p style={{fontFamily:"system-ui"}} dir="ltr">+98{phoneNumber?.slice(1, 11)}</p>
         <Button
           onClick={() => setStep("login")}
           className="!rounded-sm !px-4"
           variant={"default"}
         >
           ویرایش
-      </Button>
+        </Button>
       </div>
-      <p className="mt-4 text-sm sm:!mt-2 text-center">
+      <p className="mt-4 text-center text-sm sm:!mt-4">
         کد فعالسازی 4 رقمی به شماره موبایل شما پیامک شد
       </p>
-      <div className="relative my-6 flex flex-col items-start justify-center gap-2 sm:!flex-row  items-center sm:!gap-0">
+      <div className="relative my-6 flex flex-col items-start items-center justify-center gap-2 sm:!flex-row sm:!gap-0">
         <p className="text-sm">کد فعالسازی را وارد کنید</p>
         <InputOTP
           value={otpCode}

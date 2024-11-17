@@ -71,7 +71,7 @@ const Register = ({
   return (
     <form className="w-full " dir="rtl">
       <div className="flex items-center justify-between">
-        <p dir="ltr">+98{phoneNumber?.slice(1, 11)}</p>
+        <p style={{fontFamily:"system-ui"}} dir="ltr">+98{phoneNumber?.slice(1, 11)}</p>
         <Button
           className="!rounded-sm !px-4"
           onClick={() => setStep("login")}

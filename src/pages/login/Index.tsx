@@ -7,7 +7,7 @@ import Password from "../../components/templates/login/main/components/Password"
 import Login from "../../components/templates/login/main/components/Login";
 
 const Index = () => {
-  const [step, setStep] = useState<string>("otp");
+  const [step, setStep] = useState<string>("password");
 
   useEffect(() => {
     const registerPhoneNumber = getFromLocalStorage("otpRegisterPhoneNumber");

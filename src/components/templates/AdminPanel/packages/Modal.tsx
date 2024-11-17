@@ -23,7 +23,7 @@ const Modal = (props: Props) => {
       <DialogContent className="w-full max-w-[425px] overflow-hidden sm:max-w-full">
         <DialogHeader>
           <DialogTitle className="flex items-center justify-end gap-2 py-3">
-            ویرایش پکیج طلایی
+          {props.edit ? 'ویرایش پکیج طلایی': 'پکیج جدید'}  
           </DialogTitle>
         </DialogHeader>
 

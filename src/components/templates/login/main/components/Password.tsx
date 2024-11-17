@@ -86,8 +86,8 @@ const Password = ({
   return (
     <div className="w-full  " dir="rtl">
       <div className="flex items-center justify-between">
-        {/* <p dir="ltr">+98{phoneNumber.slice(1, 11)}</p> */}
-        <p dir="ltr">+98 </p>
+        {/* <p style={{fontFamily:"system-ui"}} dir="ltr">+98{phoneNumber.slice(1, 11)}</p> */}
+        <p style={{fontFamily:"system-ui"}} dir="ltr">+98 </p>
         <Button
           onClick={() => setStep("login")}
           className="!rounded-sm !px-4"
@@ -120,6 +120,7 @@ const Password = ({
         {/* {isPending ? <ButtonLoader /> : "ورود"} */}
         ورود
       </Button>
+      <p className="text-center mt-5">فراموشی رمز عبور</p>
       <Button
         onClick={resendCodeHandler}
         className="mx-auto mt-5 !block !rounded-full !px-4 font-thin"
