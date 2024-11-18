@@ -7,6 +7,8 @@ import Tags from "./pages/AdminPanel/Tags/Tags";
 import Surah from "./pages/AdminPanel/Surah/Surah";
 import Nav from "./pages/AdminPanel/Nav/Nav";
 import Articles from "./pages/AdminPanel/Articles/Articles";
+import News from "./pages/AdminPanel/News/News";
+import Banner from "./pages/AdminPanel/Banner/Banner";
 
 const adminPanelRoutes = [
   {
@@ -30,8 +32,16 @@ const adminPanelRoutes = [
     element: <Nav />,
   },
   {
+    path: "/adminPanel/contentManagement/news",
+    element: <News />,
+  },
+  {
     path: "/adminPanel/contentManagement/articles",
     element: <Articles />,
+  },
+  {
+    path: "/adminPanel/contentManagement/banner",
+    element: <Banner />,
   },
   {
     path: "/adminPanel/Users",

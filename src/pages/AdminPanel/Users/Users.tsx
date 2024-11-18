@@ -1,4 +1,3 @@
-import React from "react";
 import Layout from "../../../layouts/adminPanel";
 import DataTable from "react-data-table-component";
 import Title from "../../../components/modules/title/Title";
@@ -35,64 +34,64 @@ const Users = () => {
       name: "صبخ بخیر عزیز دل",
       phone: "09046417084",
       date: "1403/05/01",
-      edit:<Modal/> ,
-      delete:<Button variant={"danger"}>حذف</Button>
+      edit: <Modal />,
+      delete: <Button variant={"danger"}>حذف</Button>,
     },
     {
       id: 2,
       name: "شب بخیر جون دل",
       phone: "09046417084",
       date: "1403/05/01",
-      edit: <Modal/>,
-      delete:<Button variant={"danger"}>حذف</Button>
+      edit: <Modal />,
+      delete: <Button variant={"danger"}>حذف</Button>,
     },
     {
       id: 3,
       name: "صبخ بخیر عزیز دل",
       phone: "09046417084",
       date: "1403/05/01",
-      edit: <Modal/>,
-      delete:<Button variant={"danger"}>حذف</Button>
+      edit: <Modal />,
+      delete: <Button variant={"danger"}>حذف</Button>,
     },
     {
       id: 4,
       name: "شب بخیر جون دل",
       phone: "09046417084",
       date: "1403/05/01",
-      edit: <Modal/>,
-      delete:<Button variant={"danger"}>حذف</Button>
+      edit: <Modal />,
+      delete: <Button variant={"danger"}>حذف</Button>,
     },
     {
       id: 5,
       name: "صبخ بخیر عزیز دل",
       phone: "09046417084",
       date: "1403/05/01",
-      edit: <Modal/>,
-      delete:<Button variant={"danger"}>حذف</Button>
+      edit: <Modal />,
+      delete: <Button variant={"danger"}>حذف</Button>,
     },
     {
       id: 6,
       name: "شب بخیر جون دل",
       phone: "09046417084",
       date: "1403/05/01",
-      edit: <Modal/>,
-      delete:<Button variant={"danger"}>حذف</Button>
+      edit: <Modal />,
+      delete: <Button variant={"danger"}>حذف</Button>,
     },
     {
       id: 7,
       name: "صبخ بخیر عزیز دل",
       phone: "09046417084",
       date: "1403/05/01",
-      edit: <Modal/>,
-      delete:<Button variant={"danger"}>حذف</Button>
+      edit: <Modal />,
+      delete: <Button variant={"danger"}>حذف</Button>,
     },
     {
       id: 8,
       name: "شب بخیر جون دل",
       phone: "09046417084",
       date: "1403/05/01",
-      edit: <Modal/>,
-      delete:<Button variant={"danger"}>حذف</Button>
+      edit: <Modal />,
+      delete: <Button variant={"danger"}>حذف</Button>,
     },
   ];
   return (
