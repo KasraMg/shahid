@@ -29,14 +29,14 @@ const ContentManagement = () => {
           <p className="mb-4">برچسب ها</p>
         </Link>
         <Link
-          to={"/adminPanel/contentManagement/packages"}
+          to={"/adminPanel/contentManagement/nav"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <AiOutlineMenu className="mx-auto mb-7 text-4xl" />
           <p className="mb-4">منو و لوگو ها</p>
         </Link>
         <Link
-          to={"/adminPanel/contentManagement/packages"}
+          to={"/adminPanel/contentManagement/surah"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <RiVoiceprintFill className="mx-auto mb-7 text-4xl" />
@@ -50,7 +50,7 @@ const ContentManagement = () => {
           <p className="mb-4">اخبار</p>
         </Link>
         <Link
-          to={"/adminPanel/contentManagement/packages"}
+          to={"/adminPanel/contentManagement/articles"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <MdOutlineArticle className="mx-auto mb-7 text-4xl" />

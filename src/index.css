@@ -75,3 +75,11 @@ input[type="number"] {
 
   -moz-appearance: textfield;
 }
+
+.ck-content{
+  text-align: right !important;
+  min-height: 200px;
+}
+.ck-toolbar__items{
+  direction: rtl !important;
+}
