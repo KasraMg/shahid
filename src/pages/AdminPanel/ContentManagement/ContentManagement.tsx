@@ -22,7 +22,7 @@ const ContentManagement = () => {
           <p className="mb-4">پکیج ها</p>
         </Link>
         <Link
-          to={"/adminPanel/contentManagement/packages"}
+          to={"/adminPanel/contentManagement/tags"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <MdOutlineNewLabel className="mx-auto mb-7 text-4xl" />

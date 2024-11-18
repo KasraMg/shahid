@@ -6,6 +6,7 @@ export default {
 		extend: {
 			colors: {
 				brown: '#381b00', 
+				DoubleSpanishWhite:"#E8D4BA"
 			},
 			 
 			keyframes: {

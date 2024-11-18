@@ -9,21 +9,23 @@ import {
 import { MdModeEdit } from "react-icons/md";
 
 type Props = {
-    edit:boolean
+  edit: boolean;
 };
 
 const Modal = (props: Props) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-     {props.edit ?  <MdModeEdit className="absolute left-8 top-0 cursor-pointer text-xl text-orange-600" />:(
-<p className="my-5 sm:text-center">افزودن پکیج جدید +</p>
-     )}  
+        {props.edit ? (
+          <MdModeEdit className="absolute left-8 top-0 cursor-pointer text-xl text-orange-600" />
+        ) : (
+          <p className="my-5 sm:text-center">افزودن پکیج جدید +</p>
+        )}
       </DialogTrigger>
       <DialogContent className="w-full max-w-[425px] overflow-hidden sm:max-w-full">
         <DialogHeader>
           <DialogTitle className="flex items-center justify-end gap-2 py-3">
-          {props.edit ? 'ویرایش پکیج طلایی': 'پکیج جدید'}  
+            {props.edit ? "ویرایش پکیج طلایی" : "پکیج جدید"}
           </DialogTitle>
         </DialogHeader>
 

@@ -3,6 +3,7 @@ import Login from "./pages/login/Index";
 import ContentManagement from "./pages/AdminPanel/ContentManagement/ContentManagement";
 import Users from "./pages/AdminPanel/Users/Users";
 import Packages from "./pages/AdminPanel/Packages/Packages";
+import Tags from "./pages/AdminPanel/Tags/Tags";
 
 const adminPanelRoutes = [
   {
@@ -12,6 +13,10 @@ const adminPanelRoutes = [
   {
     path: "/adminPanel/contentManagement/packages",
     element: <Packages />,
+  },
+  {
+    path: "/adminPanel/contentManagement/tags",
+    element: <Tags />,
   },
   {
     path: "/adminPanel/Users",
