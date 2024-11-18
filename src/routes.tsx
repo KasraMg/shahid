@@ -4,6 +4,7 @@ import ContentManagement from "./pages/AdminPanel/ContentManagement/ContentManag
 import Users from "./pages/AdminPanel/Users/Users";
 import Packages from "./pages/AdminPanel/Packages/Packages";
 import Tags from "./pages/AdminPanel/Tags/Tags";
+import Surah from "./pages/AdminPanel/Surah/Surah";
 
 const adminPanelRoutes = [
   {
@@ -17,6 +18,10 @@ const adminPanelRoutes = [
   {
     path: "/adminPanel/contentManagement/tags",
     element: <Tags />,
+  },
+  {
+    path: "/adminPanel/contentManagement/surah",
+    element: <Surah />,
   },
   {
     path: "/adminPanel/Users",
