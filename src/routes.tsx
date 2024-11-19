@@ -9,11 +9,16 @@ import Nav from "./pages/AdminPanel/Nav/Nav";
 import Articles from "./pages/AdminPanel/Articles/Articles";
 import News from "./pages/AdminPanel/News/News";
 import Banner from "./pages/AdminPanel/Banner/Banner";
+import Price from "./pages/AdminPanel/Price/Price";
 
 const adminPanelRoutes = [
   {
     path: "/adminPanel/contentManagement",
     element: <ContentManagement />,
+  },
+  {
+    path: "/adminPanel/price",
+    element: <Price />,
   },
   {
     path: "/adminPanel/contentManagement/packages",

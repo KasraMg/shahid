@@ -9,7 +9,7 @@ import {
 import { Link } from "react-router-dom";
 import { LuUsers } from "react-icons/lu";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "../../shadcn/ui/accordion";
-import { MdContentCopy } from "react-icons/md";
+import { MdContentCopy,MdAttachMoney  } from "react-icons/md";
 
 const Topbar = () => {
   return (
@@ -38,6 +38,7 @@ const Topbar = () => {
       </AccordionItem> */}
 
               <Link className="flex gap-3 text-xl" to={"/adminPanel/contentManagement"}><MdContentCopy/> مدیریت محتوا </Link>
+              <Link className="flex gap-3 text-xl" to={"/adminPanel/price"}><MdAttachMoney /> مدیریت پرداخت ها </Link>
              </div>
             </SheetContent>
           </Sheet>
