@@ -2,28 +2,29 @@ import Layout from "../../../layouts/adminPanel";
 import Title from "../../../components/modules/title/Title";
 import DataTable from "react-data-table-component";
 import { Button } from "../../../components/shadcn/ui/button";
+import { GoDownload } from "react-icons/go";
 
 const Price = () => {
   const columns = [
     {
-      name: "کاربر ",  
+      name: "کاربر ",
       selector: (row: { user: string }) => row.user,
     },
     {
-      name: "مبلغ", 
+      name: "مبلغ",
       sortable: true,
       selector: (row: { price: string }) => row.price,
     },
     {
-      name: "تاریخ ",  
+      name: "تاریخ ",
       selector: (row: { date: string }) => row.date,
     },
     {
-      name: "وضعیت",  
+      name: "وضعیت",
       selector: (row: { status: string }) => row.status,
     },
     {
-      name: "نوع", 
+      name: "نوع",
       sortable: true,
       selector: (row: { type: string }) => row.type,
     },
@@ -35,7 +36,7 @@ const Price = () => {
       user: "شاهین مشکل گشا",
       price: "12233434 تومان",
       date: "1403/05/01",
-      status: <p className="text-green-600">موفق</p>,
+      status: "موفق",
       type: "ارتقا",
     },
     {
@@ -43,7 +44,7 @@ const Price = () => {
       user: "شاهین مشکل گشا",
       price: "12233434 تومان",
       date: "1403/05/01",
-      status: <p className="text-red-600">ناموفق</p>,
+      status: "ناموفق",
       type: "تمدید",
     },
     {
@@ -51,7 +52,7 @@ const Price = () => {
       user: "شاهین مشکل گشا",
       price: "12233434 تومان",
       date: "1403/05/01",
-      status: <p className="text-green-600">موفق امیز</p>,
+      status: "موفق",
       type: "تمدید",
     },
     {
@@ -59,7 +60,7 @@ const Price = () => {
       user: "شاهین مشکل گشا",
       price: "12233434 تومان",
       date: "1403/05/01",
-      status: <p className="text-red-600">ناموفق</p>,
+      status: "ناموفق",
       type: "تمدید",
     },
     {
@@ -67,7 +68,7 @@ const Price = () => {
       user: "شاهین مشکل گشا",
       price: "12233434 تومان",
       date: "1403/05/01",
-      status: <p className="text-green-600">موفق امیز</p>,
+      status: "موفق",
       type: "ثبت نام",
     },
     {
@@ -75,7 +76,7 @@ const Price = () => {
       user: "شاهین مشکل گشا",
       price: "12233434 تومان",
       date: "1403/05/01",
-      status: <p className="text-green-600">موفق امیز</p>,
+      status: "موفق",
       type: "تمدید",
     },
     {
@@ -83,7 +84,7 @@ const Price = () => {
       user: "شاهین مشکل گشا",
       price: "12233434 تومان",
       date: "1403/05/01",
-      status: <p className="text-green-600">موفق امیز</p>,
+      status: "موفق",
       type: "ارتقا",
     },
     {
@@ -91,14 +92,44 @@ const Price = () => {
       user: "شاهین مشکل گشا",
       price: "12233434 تومان",
       date: "1403/05/01",
-      status: <p className="text-green-600">موفق امیز</p>,
+      status: "موفق",
       type: "تمدید",
     },
   ];
 
+  const exportCSV = (data: any[], columns: any[]) => {
+    const headers = columns.map((col) => col.name).join(",");
+    const rows = data.map((row) =>
+      columns.map((col) => col.selector(row)).join(","),
+    );
+    const csvContent = [headers, ...rows].join("\n");
+
+    const blob = new Blob(["\uFEFF" + csvContent], {
+      type: "text/csv;charset=utf-8;",
+    });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "export.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <Layout>
       <Title className="sm:justify-center" title={"پرداخت ها"} />
+
+      <div className="mb-4 mr-auto block w-max sm:ml-auto">
+        <Button
+          className="px-10 sm:px-4"
+          onClick={() => exportCSV(data, columns)}
+        >
+          اکسپورت
+          <GoDownload />
+        </Button>
+      </div>
+
       <div>
         <DataTable
           responsive

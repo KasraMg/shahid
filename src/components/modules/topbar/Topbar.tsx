@@ -9,7 +9,9 @@ import {
 import { Link } from "react-router-dom";
 import { LuUsers } from "react-icons/lu";
 import { AccordionContent, AccordionItem, AccordionTrigger } from "../../shadcn/ui/accordion";
-import { MdContentCopy,MdAttachMoney  } from "react-icons/md";
+import { MdContentCopy,MdAttachMoney, MdLogout  } from "react-icons/md";
+import { GiShutRose } from "react-icons/gi";
+import { LiaSmsSolid } from "react-icons/lia";
 
 const Topbar = () => {
   return (
@@ -23,22 +25,32 @@ const Topbar = () => {
             <SheetTrigger asChild>
               <LuMenu className="cursor-pointer text-4xl sm:text-2xl" />
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent className="w-[350px]">
               <SheetHeader>
-                <SheetTitle className="text-center text-2xl">خوش آمدید</SheetTitle>
+                <SheetTitle className="text-center text-2xl border-b border-gray-400 pb-4">خوش آمدید</SheetTitle>
               </SheetHeader>
-             <div className="mt-12 space-y-5" dir="rtl">
-             <Link className="flex gap-3 text-xl" to={"/adminPanel/users"}><LuUsers/>مدیریت کاربران </Link>
+             <div className="mt-20 space-y-7" dir="rtl">
+             <Link className="flex gap-3 text-[18px]" to={"/adminPanel/users"}><LuUsers/>مدیریت کاربران </Link> 
+              <Link className="flex gap-3 text-[18px]" to={"/adminPanel/contentManagement"}><MdContentCopy/> مدیریت محتوا </Link>
+              <Link className="flex gap-3 text-[18px]" to={"/adminPanel/price"}><MdAttachMoney /> مدیریت پرداخت ها </Link>
+              <Link className="flex gap-3 text-[18px]" to={"/adminPanel/deceaseds"}><GiShutRose /> مدیریت متوفی ها </Link>
+              <Link className="flex gap-3 text-[18px]" to={"/adminPanel/condolences"}><LiaSmsSolid /> مدیریت تسلیت ها </Link>
+              <Link className="flex gap-3 text-[18px]" to={"/adminPanel/sms"}><LiaSmsSolid /> مدیریت پیامک(sms)  </Link>
 
+
+<img src="/images/lovepik-520-red-roses-in-tanabata-picture_500080014-removebg-preview.png" alt="flower" className="absolute bottom-0 left-0 w-full" />
+
+            <div className="absolute bottom-0 p-4 w-full right-0 flex justify-right gap-2 items-center text-xl">
+                  <p>خروج</p>
+                  <MdLogout />
+            </div>
+              
              {/* <AccordionItem value="item-1">
         <AccordionTrigger>Is it accessible?</AccordionTrigger>
         <AccordionContent>
           Yes. It adheres to the WAI-ARIA design pattern.
         </AccordionContent>
       </AccordionItem> */}
-
-              <Link className="flex gap-3 text-xl" to={"/adminPanel/contentManagement"}><MdContentCopy/> مدیریت محتوا </Link>
-              <Link className="flex gap-3 text-xl" to={"/adminPanel/price"}><MdAttachMoney /> مدیریت پرداخت ها </Link>
              </div>
             </SheetContent>
           </Sheet>

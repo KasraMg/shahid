@@ -10,6 +10,9 @@ import Articles from "./pages/AdminPanel/Articles/Articles";
 import News from "./pages/AdminPanel/News/News";
 import Banner from "./pages/AdminPanel/Banner/Banner";
 import Price from "./pages/AdminPanel/Price/Price";
+import Deceaseds from "./pages/AdminPanel/Deceaseds/Deceaseds";
+import Condolences from "./pages/AdminPanel/Condolences/Condolences";
+import Sms from "./pages/AdminPanel/Sms/Sms";
 
 const adminPanelRoutes = [
   {
@@ -19,6 +22,18 @@ const adminPanelRoutes = [
   {
     path: "/adminPanel/price",
     element: <Price />,
+  },
+  {
+    path: "/adminPanel/deceaseds",
+    element: <Deceaseds />,
+  },
+  {
+    path: "/adminPanel/condolences",
+    element: <Condolences />,
+  },
+  {
+    path: "/adminPanel/sms",
+    element: <Sms />,
   },
   {
     path: "/adminPanel/contentManagement/packages",

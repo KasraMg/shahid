@@ -4,6 +4,7 @@ import Title from "../../../components/modules/title/Title";
 import { Button } from "../../../components/shadcn/ui/button";
 import Modal from "../../../components/templates/AdminPanel/users/Modal";
 import { useState } from "react";
+import { GoDownload } from "react-icons/go";
 
 const Users = () => {
   const [filterText, setFilterText] = useState("");
@@ -129,34 +130,57 @@ const Users = () => {
       delete: <Button variant={"danger"}>حذف</Button>,
     },
   ];
-  // فیلتر کردن داده‌ها
+
   const filteredData = data.filter((item) => item.name.includes(filterText));
 
+  const exportCSV = (data: any[], columns: any[]) => {
+    const headers = columns.map((col) => col.name).join(",");
+    const rows = data.map((row) =>
+      columns.map((col) => col.selector(row)).join(","),
+    );
+    const csvContent = [headers, ...rows].join("\n");
+
+    const blob = new Blob(["\uFEFF" + csvContent], {
+      type: "text/csv;charset=utf-8;",
+    });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "export.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <Layout>
       <Title className="sm:justify-center" title={"مدیریت کاربران"} />
-
-      {/* فیلتر */}
       <div className="mb-4">
         <input
           type="text"
           placeholder="جستجوی نام کاربری"
           value={filterText}
           onChange={(e) => setFilterText(e.target.value)}
-          className=" rounded-md border-b mb-5 mt-4 outline-none border-black w-[300px] sm:w-full p-2"
+          className="mb-5 mt-4 w-[300px] rounded-md border-b border-black p-2 outline-none sm:w-full"
         />
       </div>
 
-      {/* جدول */}
+      <div className="mb-4 mr-auto block sm:ml-auto w-max">
+        <Button className="px-10 sm:px-4" onClick={() => exportCSV(filteredData, columns)}>
+         اکسپورت
+         <GoDownload/>
+        </Button>
+      </div>
+
       <div>
         <DataTable
           responsive
-          progressComponent={".... "}
           pagination
           columns={columns}
           data={filteredData}
-          noDataComponent={<div className="text-2xl">کاربری با این اسم پیدا نشد.</div>}
-
+          noDataComponent={
+            <div className="text-2xl">کاربری با این اسم پیدا نشد.</div>
+          }
         />
       </div>
     </Layout>

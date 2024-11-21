@@ -5,9 +5,9 @@
 @layer base {
   @font-face {
     font-family: "NEIRIZI";
-    src: url("../public/fonts/NEIRIZI.TTF") format("truetype") ;
+    src: url("../public/fonts/NEIRIZI.TTF") format("truetype");
   }
-   
+
   @font-face {
     font-family: "NotoNastaliqUrdu";
     src: url("../public/fonts/NotoNastaliqUrdu-Regular.ttf") format("truetype");
@@ -22,14 +22,12 @@
     font-family: "BNAZANIN";
     src: url("../public/fonts/BNAZANIN.TTF") format("truetype");
   }
-
- 
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "NEIRIZI", "BNAZANIN", "NotoNastaliqUrdu"; 
+  font-family: "NEIRIZI", "BNAZANIN", "NotoNastaliqUrdu";
 }
 html {
   overflow-x: hidden;
@@ -76,10 +74,14 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.ck-content{
+.ck-content {
   text-align: right !important;
   min-height: 200px;
 }
-.ck-toolbar__items{
+.ck-toolbar__items {
   direction: rtl !important;
+}
+
+.bOmZtP div:first-child {
+  overflow: visible !important;
 }
