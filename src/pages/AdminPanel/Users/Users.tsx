@@ -1,15 +1,25 @@
 import Layout from "../../../layouts/adminPanel";
-import DataTable from "react-data-table-component";
+import DataTable, { TableColumn } from "react-data-table-component";
 import Title from "../../../components/modules/title/Title";
 import { Button } from "../../../components/shadcn/ui/button";
 import Modal from "../../../components/templates/AdminPanel/users/Modal";
 import { useState } from "react";
 import { GoDownload } from "react-icons/go";
 
+interface UsersData {
+  id: number;
+  name: string;
+  phone: any;
+  date: any;
+  edit:any;
+  delete: any; 
+}
+
 const Users = () => {
   const [filterText, setFilterText] = useState("");
 
-  const columns = [
+  const columns: TableColumn<UsersData>[]= [
+
     {
       name: "نام کاربری",
       selector: (row: { name: string }) => row.name,
@@ -157,7 +167,7 @@ const Users = () => {
       <Title className="sm:justify-center" title={"مدیریت کاربران"} />
       <div className="mb-4">
         <input
-          type="text"
+          type="text" 
           placeholder="جستجوی نام کاربری"
           value={filterText}
           onChange={(e) => setFilterText(e.target.value)}

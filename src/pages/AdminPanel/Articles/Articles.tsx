@@ -5,22 +5,31 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { Button } from "../../../components/shadcn/ui/button";
 import Modal from "../../../components/templates/AdminPanel/articles/Modal";
-import DataTable from "react-data-table-component";
+import DataTable, { TableColumn } from "react-data-table-component";
+interface ArticleData {
+  id: number;
+  title: string;
+  body:any;
+  cover:any;
+  date: string;
+  edit:any;
+  delete:any;
+}
 const Articles = () => {
   const [editorData, setEditorData] = useState("");
 
-  const columns = [
+  const columns: TableColumn<ArticleData>[]= [
     {
-      name: "تیتر ",
+      name: "تیتر",
       selector: (row: { title: string }) => row.title,
     },
     {
       name: "متن",
-      selector: (row: { body: string }) => row.body,
+      selector: (row: { body:any }) => row.body,
     },
     {
       name: "کاور",
-      selector: (row: { cover: string }) => row.cover,
+      selector: (row: { cover:any }) => row.cover,
     },
     {
       name: "تاریخ انتشار",
@@ -28,15 +37,15 @@ const Articles = () => {
     },
     {
       name: "ویرایش",
-      selector: (row: { edit: string }) => row.edit,
+      selector: (row: { edit:any }) => row.edit,
     },
     {
       name: "حذف",
-      selector: (row: { delete: string }) => row.delete,
+      selector: (row: { delete:any }) => row.delete,
     },
   ];
-
-  const data = [
+  
+  const data = [            
     {
       id: 1,
       title:"چطور شهید خودمان را ثبت کنیم؟",
@@ -55,7 +64,7 @@ const Articles = () => {
       edit: <Modal/>,
       delete:<Button variant={"danger"}>حذف</Button>
     },
-    {
+    {                                
       id: 3,
       title:"چطور شهید خودمان را ثبت کنیم؟",
       body: <Modal articleShow={true}/>,

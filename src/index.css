@@ -33,6 +33,21 @@ html {
   overflow-x: hidden;
 }
 
+.adminPanel p,
+.adminPanel .ddvZdT,
+.adminPanel a,
+.adminPanel tr
+.adminPanel td,
+.adminPanel div,
+.adminPanel span{
+font-size: 1rem;
+}
+
+.adminPanel * {
+  font-family: "BNAZANIN";
+  font-weight: 500;
+}
+
 body {
   background: #e8d4ba;
   min-height: 100vh;

@@ -1,9 +1,9 @@
-import React from 'react'
+ import { Link } from 'react-router-dom'
 
 const index = () => {
   return (
     <div>
-      eeee
+      <Link className='mx-auto block mt-52 w-max text-4xl' to={'/adminPanel/users'}>پنل ادمین </Link>
     </div>
   )
 }

@@ -1,5 +1,4 @@
-import React from "react";
-import Layout from "../../../layouts/adminPanel";
+ import Layout from "../../../layouts/adminPanel";
 import Title from "../../../components/modules/title/Title";
 import { GoDotFill } from "react-icons/go";
 import Modal from "../../../components/templates/AdminPanel/packages/Modal";
@@ -7,12 +6,12 @@ import Modal from "../../../components/templates/AdminPanel/packages/Modal";
 const Packages = () => {
   return (
     <Layout>
-      <div className="flex justify-between sm:justify-between sm:flex-col">
+      <div className="flex justify-between text-xl sm:justify-between sm:flex-col">
       <Title className="sm:justify-center" title={"پکیج ها"} />
       <Modal edit={false}/>
 
       </div>
-      <div className="mt-8 grid md:grid-cols-[1fr,1fr] md:gap-10 sm:!gap-20 sm:!grid-cols-[1fr] grid-cols-[1fr,1fr,1fr] gap-5">
+      <div className="mt-8 text-xl grid md:grid-cols-[1fr,1fr] md:gap-10 sm:!gap-20 sm:!grid-cols-[1fr] grid-cols-[1fr,1fr,1fr] gap-5">
         <div className="relative p-4 text-center">
           <p className="border-b border-black pb-5">پکیج طلایی</p>
           <p className="border-b border-black pb-5 pt-5">120 روزه</p>

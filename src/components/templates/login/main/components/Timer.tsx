@@ -1,12 +1,12 @@
 import { Button } from "../../../../shadcn/ui/button";
 // import usePostData from "@/src/hooks/usePostData";
-import { getFromLocalStorage } from "../../../../../utils/utils";
-import React, { useEffect, useState } from "react";
+// import { getFromLocalStorage } from "../../../../../utils/utils";
+import  { useEffect, useState } from "react";
 
 const Timer = () => {
-  const otpLoginPhoneNumber = getFromLocalStorage("otpLoginPhoneNumber");
-  const otpRegisterPhoneNumber = getFromLocalStorage("otpRegisterPhoneNumber");
-  const phoneNumber = otpLoginPhoneNumber || otpRegisterPhoneNumber;
+  // const otpLoginPhoneNumber = getFromLocalStorage("otpLoginPhoneNumber");
+  // const otpRegisterPhoneNumber = getFromLocalStorage("otpRegisterPhoneNumber");
+  // const phoneNumber = otpLoginPhoneNumber || otpRegisterPhoneNumber;
   const [timer, setTimer] = useState<number>(0);
 
   // const { mutate: resendCode } = usePostData<any>(

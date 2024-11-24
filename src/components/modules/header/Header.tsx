@@ -1,8 +1,7 @@
-import React from "react";
-
+ 
 type Props = {};
 
-const Header = (props: Props) => {
+const Header = (_props: Props) => {
   return ( 
     <header dir="rtl" className="flex w-full flex-col items-center  pl-[86px] pt-12 sm:!pl-4 lg:pl-7 lg:pt-3.5">
       <div className="header-container flex w-full items-center justify-between">

@@ -1,12 +1,20 @@
  import Title from '../../../components/modules/title/Title'
 import Layout from '../../../layouts/adminPanel'
-import DataTable from 'react-data-table-component'
+import DataTable, { TableColumn } from 'react-data-table-component'
 import { Button } from '../../../components/shadcn/ui/button'
 import Modal from '../../../components/templates/AdminPanel/deceaseds/Modal'
 
+interface DeceasedsData {
+  id: number;
+  name: string;
+  phone:any;
+  date:any; 
+  details:any;
+  status:any;
+}
 const Deceaseds = () => {
 
-    const columns = [
+    const columns   : TableColumn<DeceasedsData>[] = [
         {
           name: "نویسنده",
           selector: (row: { name: string }) => row.name,
@@ -28,7 +36,7 @@ const Deceaseds = () => {
           selector: (row: { status: string }) => row.status,
         },
       ];
-    
+     
       const data = [
         {
           id: 1,

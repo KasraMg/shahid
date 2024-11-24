@@ -17,7 +17,7 @@ const Modal = (props: Props) => {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant={"default"}>
-          {props.newNews ? "+اخبار جدید " : props.newShow ? "مشاهده" : "ویرایش"}
+          {props.newNews ? "+ اخبار جدید " : props.newShow ? "مشاهده" : "ویرایش"}
         </Button>
       </DialogTrigger>
       <DialogContent className="w-full max-w-[425px] sm:max-w-full">

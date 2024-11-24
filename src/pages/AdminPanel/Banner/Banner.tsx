@@ -1,12 +1,21 @@
-import DataTable from 'react-data-table-component';
+import DataTable, { TableColumn } from 'react-data-table-component';
 import Title from '../../../components/modules/title/Title'
 import Layout from '../../../layouts/adminPanel'
 import { Button } from '../../../components/shadcn/ui/button';
 import Modal from '../../../components/templates/AdminPanel/banner/Modal';
 
-const Banner = () => {
+interface BannerData {
+  id: number;
+  title: string;
+  body:any;
+  cover:any;
+  date: string;
+  edit:any;
+  delete:any;
+}
+const Banner =() => {
 
-    const columns = [
+    const columns: TableColumn<BannerData>[] = [
         {
           name: "تیتر ",
           selector: (row: { title: string }) => row.title,

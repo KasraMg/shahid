@@ -1,5 +1,4 @@
-import React from "react";
-import Topbar from "../components/modules/topbar/Topbar";
+ import Topbar from "../components/modules/topbar/Topbar";
 
 type Props = {
   children: React.ReactNode;
@@ -8,7 +7,7 @@ type Props = {
 
 const Layout = (props: Props) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen adminPanel">
       <Topbar />
       <div
         dir="rtl"

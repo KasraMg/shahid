@@ -1,12 +1,11 @@
-import { ButtonLoader } from "../../../..//modules/loader/Loader";
 import { Button } from "../../../..//shadcn/ui/button"; 
 // import usePostData from "@/src/hooks/usePostData";
-import { getFromLocalStorage, saveIntoLocalStorage } from "../../../../../utils/utils"; 
+import { getFromLocalStorage } from "../../../../../utils/utils"; 
 import { registerSchema } from "../../../../../validations/rules";  
 import { useFormik } from "formik";
 import React, { useState } from "react";
 import { LuEye } from "react-icons/lu";
-import { toast } from "../../../../../hooks/use-toast";
+// import { toast } from "../../../../../hooks/use-toast";
 
 interface formValues {
   firstName: string;
@@ -20,24 +19,24 @@ const Register = ({
 }: {
   setStep: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-  const successFunc = (data: { statusCode: number }) => {
-    if (data.statusCode === 200) {
-      toast({
-        variant: "success",
-        title: "اطلاعات با موفقیت ثبت شد",
-      });
-      setStep("otp");
-      saveIntoLocalStorage("registerUserData", formHandler.values);
-      formHandler.resetForm();
-    } else {
-      toast({
-        variant: "danger",
-        title: "با عرض پوزش لطفا مجدد مراحل رو طی کنید",
-      });
-      localStorage.clear();
-      location.reload();
-    }
-  };
+  // const successFunc = (data: { statusCode: number }) => {
+  //   if (data.statusCode === 200) {
+  //     toast({
+  //       variant: "success",
+  //       title: "اطلاعات با موفقیت ثبت شد",
+  //     });
+  //     setStep("otp");
+  //     saveIntoLocalStorage("registerUserData", formHandler.values);
+  //     formHandler.resetForm();
+  //   } else {
+  //     toast({
+  //       variant: "danger",
+  //       title: "با عرض پوزش لطفا مجدد مراحل رو طی کنید",
+  //     });
+  //     localStorage.clear();
+  //     location.reload();
+  //   }
+  // };
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -50,7 +49,7 @@ const Register = ({
       confirmPassword: "",
       phone: phoneNumber,
     },
-    onSubmit: (values: formValues) => {
+    onSubmit: (_values: formValues) => {
       // mutation(values as any);
     },
     validationSchema: registerSchema,
