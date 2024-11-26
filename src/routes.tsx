@@ -13,6 +13,9 @@ import Price from "./pages/AdminPanel/Price/Price";
 import Deceaseds from "./pages/AdminPanel/Deceaseds/Deceaseds";
 import Condolences from "./pages/AdminPanel/Condolences/Condolences";
 import Sms from "./pages/AdminPanel/Sms/Sms";
+import MartyrRegister from "./pages/Martyr/Register/Register";
+import MartyrPackages from "./pages/Martyr/Packages/Packages";
+import Step2 from "./pages/Martyr/Packages/steps/Step2";
 
 const adminPanelRoutes = [
   {
@@ -76,6 +79,18 @@ const routes = [
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/martyr/register",
+    element: <MartyrRegister />,
+  },
+  {
+    path: "/martyr/packages",
+    element: <MartyrPackages />,
+  },
+  {
+    path: "/martyr/packages/Step2",
+    element: <Step2 />,
   },
 
   ...adminPanelRoutes,

@@ -66,6 +66,16 @@ h3 {
   font-weight: 400;
 }
 
+td, th {
+  border: 1px solid #c2c2c2;
+  text-align: center;
+  padding:12px 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition:
@@ -99,4 +109,25 @@ input[type="number"] {
 
 .bOmZtP div:first-child {
   overflow: visible !important;
+}
+
+.rmdp-input{
+  background: transparent; 
+  border: 0;
+  margin-top: 19px;
+  outline: none !important;
+  border-radius: 0;
+  border-bottom: 1px solid black !important;
+}
+.rmdp-input:focus {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+@media(max-width:768px){
+  .rmdp-input{
+    width: 100% !important;
+  }
 }
