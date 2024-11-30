@@ -91,11 +91,15 @@ const Topbar = () => {
               </div>
             </SheetContent>
           </Sheet>
+          <Link to={'/'}>
           <img
             src="/images/logo.svg"
             alt="logo"
             className="lg:h-[34px] lg:w-[79px]"
           />
+
+          </Link>
+        
         </div>
         <div className="block !text-[37.11px] text-[#381B00] lg:hidden">
           بِسْمِ اللّهِ الرَّحْمَنِ الرَّحيمِ

@@ -15,7 +15,7 @@ const Sms = () => {
               type="text"
               className="w-[300px] border-b border-black p-3 outline-none sm:w-full"
             />
-            <Button variant={"main"} className="sm:w-full">
+            <Button variant={"main"} className="sm:w-full !text-xl">
               ثبت
             </Button>
           </div>
@@ -23,8 +23,8 @@ const Sms = () => {
 
         <Title className="sm:justify-center" title={" پیامک فعلی   "} />
 
-        <div className="flex justify-center bg-DoubleSpanishWhite py-3 text-black">
-          <p>سلام به سایت ما خوش امدید</p>
+        <div className="flex justify-center  bg-DoubleSpanishWhite py-3 text-black">
+          <p className="!text-2xl">سلام به سایت ما خوش امدید</p>
         </div>
       </div>
     </Layout>

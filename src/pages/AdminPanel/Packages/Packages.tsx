@@ -12,7 +12,7 @@ const Packages = () => {
 
       </div>
       <div className="mt-8 text-xl grid md:grid-cols-[1fr,1fr] md:gap-10 sm:!gap-20 sm:!grid-cols-[1fr] grid-cols-[1fr,1fr,1fr] gap-5">
-        <div className="relative p-4 text-center">
+        <div className="relative p-4 text-center [&>*]:!text-xl">
           <p className="border-b border-black pb-5">پکیج طلایی</p>
           <p className="border-b border-black pb-5 pt-5">120 روزه</p>
           <p className="border-b border-black pb-5 pt-5">330000 هزار تومن</p>
@@ -34,7 +34,7 @@ const Packages = () => {
           </div>
           <Modal edit={true}/>
         </div>
-        <div className="relative p-4 text-center">
+        <div className="relative p-4 text-center [&>*]:!text-xl">
           <p className="border-b border-black pb-5">پکیج طلایی</p>
           <p className="border-b border-black pb-5 pt-5">120 روزه</p>
           <p className="border-b border-black pb-5 pt-5">330000 هزار تومن</p>
@@ -56,7 +56,7 @@ const Packages = () => {
           </div>
           <Modal edit={true}/>
         </div>
-        <div className="relative p-4 text-center">
+        <div className="relative p-4 text-center [&>*]:!text-xl">
           <p className="border-b border-black pb-5">پکیج طلایی</p>
           <p className="border-b border-black pb-5 pt-5">120 روزه</p>
           <p className="border-b border-black pb-5 pt-5">330000 هزار تومن</p>

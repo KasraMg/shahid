@@ -82,7 +82,7 @@ const Register = ({
       <p className="mb-2 mt-2 text-2xl">ثبت‌نام</p>
       <p className="text-sm font-thin">لطفا مشخصات صحیح خود را وارد کنید</p>
       <input
-        className="mt-3 w-full rounded-md border border-solid border-gray-400 py-2 pl-6 pr-3 text-sm"
+        className="mt-3 w-full rounded-md border border-solid border-gray-400 py-2 pl-6 pr-3 text-base"
         type="text"
         name="firstName"
         placeholder="نام"
@@ -91,12 +91,12 @@ const Register = ({
         onBlur={formHandler.handleBlur}
       />
       {formHandler.touched.firstName && formHandler.errors.firstName && (
-        <span className="mt-2 block w-full text-center text-xs text-red-600">
+        <span className="mt-2 block w-full text-center text-sm text-red-600">
           {formHandler.errors.firstName}
         </span>
       )}
       <input
-        className="mt-3 w-full rounded-md border border-solid border-gray-400 py-2 pl-6 pr-3 text-sm"
+        className="mt-3 w-full rounded-md border border-solid border-gray-400 py-2 pl-6 pr-3 text-base"
         type="text"
         name="lastName"
         placeholder="نام خانوادگی"
@@ -105,7 +105,7 @@ const Register = ({
         onChange={formHandler.handleChange}
       />
       {formHandler.touched.lastName && formHandler.errors.lastName && (
-        <span className="mt-2 block w-full text-center text-xs text-red-600">
+        <span className="mt-2 block w-full text-center text-sm text-red-600">
           {formHandler.errors.lastName}
         </span>
       )}
@@ -116,12 +116,12 @@ const Register = ({
           value={formHandler.values.password}
           onBlur={formHandler.handleBlur}
           onChange={formHandler.handleChange}
-          className="mt-3 w-full rounded-md border border-solid border-gray-400 py-2 pl-9 pr-3 text-sm placeholder:text-right"
+          className="mt-3 w-full rounded-md border border-solid border-gray-400 py-2 pl-9 pr-3 text-base placeholder:text-right"
           name="password"
           placeholder="رمز عبور"
         />
         {formHandler.touched.password && formHandler.errors.password && (
-          <span className="mt-2 block w-full text-center text-xs text-red-600">
+          <span className="mt-2 block w-full text-center text-sm text-red-600">
             {formHandler.errors.password}
           </span>
         )}
@@ -137,13 +137,13 @@ const Register = ({
           value={formHandler.values.confirmPassword}
           onBlur={formHandler.handleBlur}
           onChange={formHandler.handleChange}
-          className="mt-3 w-full rounded-md border border-solid border-gray-400 py-2 pl-9 pr-3 text-sm placeholder:text-right"
+          className="mt-3 w-full rounded-md border border-solid border-gray-400 py-2 pl-9 pr-3 text-base placeholder:text-right"
           name="confirmPassword"
           placeholder="تکرار رمز عبور"
         />
         {formHandler.touched.confirmPassword &&
           formHandler.errors.confirmPassword && (
-            <span className="mt-2 block w-full text-center text-xs text-red-600">
+            <span className="mt-2 block w-full text-center text-sm text-red-600">
               {formHandler.errors.confirmPassword}
             </span>
           )}

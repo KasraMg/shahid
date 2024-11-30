@@ -19,49 +19,49 @@ const ContentManagement = () => {
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <LuPackagePlus className="mx-auto mb-7 text-4xl" />
-          <p className="mb-4">پکیج ها</p>
+          <p className="mb-4 !text-xl">پکیج ها</p>
         </Link>
         <Link
           to={"/adminPanel/contentManagement/tags"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <MdOutlineNewLabel className="mx-auto mb-7 text-4xl" />
-          <p className="mb-4">برچسب ها</p>
+          <p className="mb-4 !text-xl">برچسب ها</p>
         </Link>
         <Link
           to={"/adminPanel/contentManagement/nav"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <AiOutlineMenu className="mx-auto mb-7 text-4xl" />
-          <p className="mb-4">منو و لوگو ها</p>
+          <p className="mb-4 !text-xl">منو و لوگو ها</p>
         </Link>
         <Link
           to={"/adminPanel/contentManagement/surah"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <RiVoiceprintFill className="mx-auto mb-7 text-4xl" />
-          <p className="mb-4">سوره ها</p>
+          <p className="mb-4 !text-xl">سوره ها</p>
         </Link>
         <Link
           to={"/adminPanel/contentManagement/news"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <IoNewspaperOutline className="mx-auto mb-7 text-4xl" />
-          <p className="mb-4">اخبار</p>
+          <p className="mb-4 !text-xl">اخبار</p>
         </Link>
         <Link
           to={"/adminPanel/contentManagement/articles"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <MdOutlineArticle className="mx-auto mb-7 text-4xl" />
-          <p className="mb-4">مقلات</p>
+          <p className="mb-4 !text-xl">مقلات</p>
         </Link>
         <Link
           to={"/adminPanel/contentManagement/banner"}
           className="cursor-pointer rounded-xl p-4 text-center shadow-lg transition-transform hover:-translate-y-2"
         >
           <PiFlagBannerFold className="mx-auto mb-7 text-4xl" />
-          <p className="mb-4">بنر </p>
+          <p className="mb-4 !text-xl">بنر </p>
         </Link>
       </div>
     </Layout>

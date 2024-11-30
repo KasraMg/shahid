@@ -27,7 +27,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "NEIRIZI", "BNAZANIN", "NotoNastaliqUrdu";
+  font-family: "BNAZANIN";
+  font-size: 1.1rem;
+
 }
 html {
   overflow-x: hidden;
@@ -36,11 +38,10 @@ html {
 .adminPanel p,
 .adminPanel .ddvZdT,
 .adminPanel a,
-.adminPanel tr
-.adminPanel td,
+.adminPanel tr .adminPanel td,
 .adminPanel div,
-.adminPanel span{
-font-size: 1rem;
+.adminPanel span {
+  font-size: 1rem;
 }
 
 .adminPanel * {
@@ -66,14 +67,25 @@ h3 {
   font-weight: 400;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #c2c2c2;
   text-align: center;
-  padding:12px 8px;
+  padding: 12px 8px;
 }
+.invoice_table th,
+.invoice_table td{
+  border: 0;
+} 
+.invoice_table tr:nth-child(even) {
+  background-color: #fff !important;
 
+ }
+.invoice_table tr:nth-child(odd) {
+  background-color: #f2f2f291;
+}
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #eae9e991;
 }
 
 input:-webkit-autofill,
@@ -111,8 +123,8 @@ input[type="number"] {
   overflow: visible !important;
 }
 
-.rmdp-input{
-  background: transparent; 
+.rmdp-input {
+  background: transparent;
   border: 0;
   margin-top: 19px;
   outline: none !important;
@@ -126,8 +138,12 @@ input[type="number"] {
   box-shadow: none !important;
   outline: none !important;
 }
-@media(max-width:768px){
-  .rmdp-input{
+@media (max-width: 768px) {
+  .rmdp-input {
     width: 100% !important;
   }
+}
+
+.sc-eUlrpB * {
+  font-size: 1.1rem !important;
 }

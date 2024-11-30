@@ -16,6 +16,8 @@ import Sms from "./pages/AdminPanel/Sms/Sms";
 import MartyrRegister from "./pages/Martyr/Register/Register";
 import MartyrPackages from "./pages/Martyr/Packages/Packages";
 import Step2 from "./pages/Martyr/Packages/steps/Step2";
+import Step3 from "./pages/Martyr/Packages/steps/Step3";
+import Invoice from "./pages/Martyr/Packages/steps/Invoice";
 
 const adminPanelRoutes = [
   {
@@ -89,10 +91,17 @@ const routes = [
     element: <MartyrPackages />,
   },
   {
-    path: "/martyr/packages/Step2",
+    path: "/martyr/packages/step2",
     element: <Step2 />,
   },
-
+  {
+    path: "/martyr/packages/step3",
+    element: <Step3 />,
+  },
+  {
+    path: "/martyr/packages/invoice",
+    element: <Invoice />,
+  },
   ...adminPanelRoutes,
 ];
 
