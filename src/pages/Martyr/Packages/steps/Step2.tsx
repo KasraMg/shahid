@@ -20,9 +20,9 @@ const Step2 = () => {
             <p className="text-center text-xl">
               لطفا مشخصات مرحوم را وارد نمایید
             </p>
-            <div className="mt-10 flex justify-between gap-7 sm:flex-col-reverse">
+            <div className="mt-10 flex items-end justify-between gap-7 md:flex-col-reverse">
               <div className="md:w-full">
-                <p dir="rtl" className="text-right text-blue-500 md:text-sm">
+                <p dir="rtl" className="text-right text-blue-500 md:text-sm mb-2">
                   تاریخ وفات*
                 </p>
                 <DatePicker
@@ -36,10 +36,10 @@ const Step2 = () => {
                 />
               </div>
               <div className="md:w-full">
-                <p className="text-right text-blue-500 md:text-sm">جنسیت</p>
+                <p className="text-right text-blue-500 md:text-sm mb-4">جنسیت</p>
                 <select
                   dir="rtl"
-                  className="mt-0.5 w-[214px] border-b border-black bg-transparent outline-none md:w-full"
+                  className="w-[214px] border-b border-black bg-transparent outline-none md:w-full"
                   name=""
                   id=""
                 >
@@ -59,7 +59,7 @@ const Step2 = () => {
               </div>
             </div>
 
-            <div className="w-full text-center">
+            <div className="w-full text-center sm:mt-12">
               <div className="relative mx-auto mt-7 h-24 w-24 rounded-full border border-dashed border-black">
                 <input
                   type="file"
@@ -75,10 +75,10 @@ const Step2 = () => {
                 </div>
               </div>
               <p className="mt-5">برای انتخاب عکس، کادر بالا را لمس کنید</p>
-              <p className="mt-2">
+              <p className="mt-2 sm:text-sm">
                 (اگر عکس انتخاب نکنید، پروفایل همین خواهد ماند)
               </p>
-              <div className="mt-10 flex w-full justify-between">
+              <div className="mt-10 flex w-full justify-between sm:mb-10">
                 <Link to={"/martyr/packages/step3"}>
                   <Button className="px-7" variant="main">
                     مرحله بعد
