@@ -12,7 +12,7 @@ import { LuUsers } from "react-icons/lu";
 import { MdContentCopy, MdAttachMoney, MdLogout } from "react-icons/md";
 import { GiShutRose } from "react-icons/gi";
 import { LiaSmsSolid } from "react-icons/lia";
-import { FaHome } from "react-icons/fa";
+import { FaBarcode, FaHome } from "react-icons/fa";
 
 const Topbar = () => {
   return (
@@ -32,43 +32,46 @@ const Topbar = () => {
                   خوش آمدید
                 </SheetTitle>
               </SheetHeader>
-              <div className="mt-20 space-y-7" dir="rtl">
-                <Link className="flex gap-3 text-[18px]" to={"/"}>
+              <div className="mt-10 space-y-6" dir="rtl">
+                <Link className="flex gap-3 text-[18px] items-center z-[600] relative text-xl" to={"/"}>
                   <FaHome /> صفحه اصلی{" "}
                 </Link>
                 <Link
-                  className="flex gap-3 text-[18px]"
+                  className="flex gap-3 text-[18px] items-center z-[600] relative text-xl"
                   to={"/adminPanel/users"}
                 >
                   <LuUsers />
                   مدیریت کاربران{" "}
                 </Link>
                 <Link
-                  className="flex gap-3 text-[18px]"
+                  className="flex gap-3 text-[18px] items-center z-[600] relative text-xl"
                   to={"/adminPanel/contentManagement"}
                 >
                   <MdContentCopy /> مدیریت محتوا{" "}
                 </Link>
                 <Link
-                  className="flex gap-3 text-[18px]"
+                  className="flex gap-3 text-[18px] items-center z-[600] relative text-xl"
                   to={"/adminPanel/price"}
                 >
                   <MdAttachMoney /> مدیریت پرداخت ها{" "}
                 </Link>
                 <Link
-                  className="flex gap-3 text-[18px]"
+                  className="flex gap-3 text-[18px] items-center z-[600] relative text-xl"
                   to={"/adminPanel/deceaseds"}
                 >
                   <GiShutRose /> مدیریت متوفی ها{" "}
                 </Link>
                 <Link
-                  className="flex gap-3 text-[18px]"
+                  className="flex gap-3 text-[18px] items-center z-[600] relative text-xl"
                   to={"/adminPanel/condolences"}
                 >
                   <LiaSmsSolid /> مدیریت تسلیت ها{" "}
                 </Link>
-                <Link className="flex gap-3 text-[18px]" to={"/adminPanel/sms"}>
+                <Link className="flex gap-3 text-[18px] items-center z-[600] relative text-xl" to={"/adminPanel/sms"}>
                   <LiaSmsSolid /> مدیریت پیامک(sms){" "}
+                </Link>
+                <Link className="flex gap-3 text-[18px] items-center z-[600] relative text-xl" to={"/adminPanel/barcode"}>
+                  <FaBarcode /> مدیریت بارکد {" "}
                 </Link>
 
                 <img

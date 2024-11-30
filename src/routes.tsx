@@ -18,6 +18,7 @@ import MartyrPackages from "./pages/Martyr/Packages/Packages";
 import Step2 from "./pages/Martyr/Packages/steps/Step2";
 import Step3 from "./pages/Martyr/Packages/steps/Step3";
 import Invoice from "./pages/Martyr/Packages/steps/Invoice";
+import Barcode from "./pages/AdminPanel/Barcode/Barcode";
 
 const adminPanelRoutes = [
   {
@@ -69,6 +70,10 @@ const adminPanelRoutes = [
     element: <Banner />,
   },
   {
+    path: "/adminPanel/barcode",
+    element: <Barcode />,
+  },
+  {
     path: "/adminPanel/Users",
     element: <Users />,
   },
@@ -95,7 +100,7 @@ const routes = [
     element: <Step2 />,
   },
   {
-    path: "/martyr/packages/step3",
+    path: "/martyr/packages/step3", 
     element: <Step3 />,
   },
   {
