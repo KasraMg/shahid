@@ -19,6 +19,7 @@ import Step2 from "./pages/Martyr/Packages/steps/Step2";
 import Step3 from "./pages/Martyr/Packages/steps/Step3";
 import Invoice from "./pages/Martyr/Packages/steps/Invoice";
 import Barcode from "./pages/AdminPanel/Barcode/Barcode";
+import Deceased from "./pages/Deceased/Deceased";
 
 const adminPanelRoutes = [
   {
@@ -86,6 +87,10 @@ const routes = [
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/deceased/:id",
+    element: <Deceased/>,
   },
   {
     path: "/martyr/register",
