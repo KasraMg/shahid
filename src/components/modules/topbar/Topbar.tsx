@@ -33,45 +33,54 @@ const Topbar = () => {
                 </SheetTitle>
               </SheetHeader>
               <div className="mt-10 space-y-6" dir="rtl">
-                <Link className="flex gap-3 text-[18px] items-center z-[600] relative text-xl" to={"/"}>
+                <Link
+                  className="relative z-[600] flex items-center gap-3 text-[18px] text-xl"
+                  to={"/"}
+                >
                   <FaHome /> صفحه اصلی{" "}
                 </Link>
                 <Link
-                  className="flex gap-3 text-[18px] items-center z-[600] relative text-xl"
+                  className="relative z-[600] flex items-center gap-3 text-[18px] text-xl"
                   to={"/adminPanel/users"}
                 >
                   <LuUsers />
                   مدیریت کاربران{" "}
                 </Link>
                 <Link
-                  className="flex gap-3 text-[18px] items-center z-[600] relative text-xl"
+                  className="relative z-[600] flex items-center gap-3 text-[18px] text-xl"
                   to={"/adminPanel/contentManagement"}
                 >
                   <MdContentCopy /> مدیریت محتوا{" "}
                 </Link>
                 <Link
-                  className="flex gap-3 text-[18px] items-center z-[600] relative text-xl"
+                  className="relative z-[600] flex items-center gap-3 text-[18px] text-xl"
                   to={"/adminPanel/price"}
                 >
                   <MdAttachMoney /> مدیریت پرداخت ها{" "}
                 </Link>
                 <Link
-                  className="flex gap-3 text-[18px] items-center z-[600] relative text-xl"
+                  className="relative z-[600] flex items-center gap-3 text-[18px] text-xl"
                   to={"/adminPanel/deceaseds"}
                 >
                   <GiShutRose /> مدیریت متوفی ها{" "}
                 </Link>
                 <Link
-                  className="flex gap-3 text-[18px] items-center z-[600] relative text-xl"
+                  className="relative z-[600] flex items-center gap-3 text-[18px] text-xl"
                   to={"/adminPanel/condolences"}
                 >
                   <LiaSmsSolid /> مدیریت تسلیت ها{" "}
                 </Link>
-                <Link className="flex gap-3 text-[18px] items-center z-[600] relative text-xl" to={"/adminPanel/sms"}>
+                <Link
+                  className="relative z-[600] flex items-center gap-3 text-[18px] text-xl"
+                  to={"/adminPanel/sms"}
+                >
                   <LiaSmsSolid /> مدیریت پیامک(sms){" "}
                 </Link>
-                <Link className="flex gap-3 text-[18px] items-center z-[600] relative text-xl" to={"/adminPanel/barcode"}>
-                  <FaBarcode /> مدیریت بارکد {" "}
+                <Link
+                  className="relative z-[600] flex items-center gap-3 text-[18px] text-xl"
+                  to={"/adminPanel/barcode"}
+                >
+                  <FaBarcode /> مدیریت بارکد{" "}
                 </Link>
 
                 <img
@@ -94,15 +103,13 @@ const Topbar = () => {
               </div>
             </SheetContent>
           </Sheet>
-          <Link to={'/'}>
-          <img
-            src="/images/logo.svg"
-            alt="logo"
-            className="lg:h-[34px] lg:w-[79px]"
-          />
-
+          <Link to={"/"}>
+            <img
+              src="/images/logo.svg"
+              alt="logo"
+              className="lg:h-[34px] lg:w-[79px]"
+            />
           </Link>
-        
         </div>
         <div className="block !text-[37.11px] text-[#381B00] lg:hidden">
           بِسْمِ اللّهِ الرَّحْمَنِ الرَّحيمِ

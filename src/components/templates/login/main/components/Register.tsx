@@ -1,10 +1,12 @@
-import { Button } from "../../../..//shadcn/ui/button"; 
+import { Button } from "../../../..//shadcn/ui/button";
 // import usePostData from "@/src/hooks/usePostData";
-import { getFromLocalStorage } from "../../../../../utils/utils"; 
-import { registerSchema } from "../../../../../validations/rules";  
+import { getFromLocalStorage, saveIntoLocalStorage } from "../../../../../utils/utils";
+import { registerSchema } from "../../../../../validations/rules";
 import { useFormik } from "formik";
 import React, { useState } from "react";
 import { LuEye } from "react-icons/lu";
+import usePostData from "../../../../../hooks/usePostData";
+import { toast } from "../../../../../hooks/use-toast";
 // import { toast } from "../../../../../hooks/use-toast";
 
 interface formValues {
@@ -19,24 +21,24 @@ const Register = ({
 }: {
   setStep: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-  // const successFunc = (data: { statusCode: number }) => {
-  //   if (data.statusCode === 200) {
-  //     toast({
-  //       variant: "success",
-  //       title: "اطلاعات با موفقیت ثبت شد",
-  //     });
-  //     setStep("otp");
-  //     saveIntoLocalStorage("registerUserData", formHandler.values);
-  //     formHandler.resetForm();
-  //   } else {
-  //     toast({
-  //       variant: "danger",
-  //       title: "با عرض پوزش لطفا مجدد مراحل رو طی کنید",
-  //     });
-  //     localStorage.clear();
-  //     location.reload();
-  //   }
-  // };
+  const successFunc = (data: { statusCode: number }) => {
+    if (data.statusCode === 200) {
+      toast({
+        variant: "success",
+        title: "اطلاعات با موفقیت ثبت شد",
+      });
+      setStep("otp");
+      saveIntoLocalStorage("registerUserData", formHandler.values);
+      formHandler.resetForm();
+    } else {
+      toast({
+        variant: "danger",
+        title: "با عرض پوزش لطفا مجدد مراحل رو طی کنید",
+      });
+      localStorage.clear();
+      location.reload();
+    }
+  };
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -49,18 +51,25 @@ const Register = ({
       confirmPassword: "",
       phone: phoneNumber,
     },
-    onSubmit: (_values: formValues) => {
-      // mutation(values as any);
+    onSubmit: (values: formValues) => {
+      const data = {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        password: values.password,
+        confirmPassword: values.confirmPassword,
+        phoneNumber: values.phone,
+      };
+      mutation(data as any); 
     },
     validationSchema: registerSchema,
   });
 
-  // const { mutate: mutation, isPending } = usePostData<{ values: formValues }>(
-  //   "/auth/sendCode",
-  //   null,
-  //   false,
-  //   successFunc,
-  // );
+  const { mutate: mutation, isPending } = usePostData<{ values: formValues }>(
+    "/api/user/RegisterUser",
+    null,
+    false,
+    successFunc,
+  );
 
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
@@ -68,9 +77,11 @@ const Register = ({
   };
 
   return (
-    <form className="w-full " dir="rtl">
+    <form className="w-full" dir="rtl">
       <div className="flex items-center justify-between">
-        <p style={{fontFamily:"system-ui"}} dir="ltr">+98{phoneNumber?.slice(1, 11)}</p>
+        <p style={{ fontFamily: "system-ui" }} dir="ltr">
+          +98{phoneNumber?.slice(1, 11)}
+        </p>
         <Button
           className="!rounded-sm !px-4"
           onClick={() => setStep("login")}

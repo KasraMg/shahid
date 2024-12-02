@@ -41,7 +41,8 @@
     "tailwind-merge": "^2.5.4",
     "tailwindcss": "^3.4.14",
     "tailwindcss-animate": "^1.0.7",
-    "yup": "^1.4.0"
+    "yup": "^1.4.0",
+    "zustand": "^5.0.1"
   },
   "devDependencies": {
     "@types/jalaali-js": "^1.1.3",

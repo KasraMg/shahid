@@ -92,7 +92,7 @@ const routes = [
     element: <MartyrRegister />,
   },
   {
-    path: "/martyr/packages",
+    path: "/martyr/packages", 
     element: <MartyrPackages />,
   },
   {
