@@ -21,7 +21,7 @@ const Modal = ({ data }: { data: UserType }) => {
   const formHandler = useFormik({
     initialValues: {
       firstName: data.firstName,
-      lastName: data.lastName,
+      lastName: data.lastName, 
       password: "",
       phone: data.phoneNumber,
     },
@@ -48,13 +48,17 @@ const Modal = ({ data }: { data: UserType }) => {
 
     const obj = {
       firstName: formHandler.values.firstName,
-      lastName: formHandler.values.lastName,
-      ...(formHandler.values.password.length > 0 && {
-        password: formHandler.values.password,
-      }),
+      lastName: formHandler.values.lastName, 
+      password:
+        formHandler.values.password.length > 0
+          ? formHandler.values.password
+          : "",
+
       phoneNumber: formHandler.values.phone,
       role,
     };
+    console.log(obj);
+    
     mutation(obj as any);
     formHandler.handleSubmit();
   };
@@ -67,7 +71,6 @@ const Modal = ({ data }: { data: UserType }) => {
         <DialogHeader>
           <DialogTitle className="flex items-center justify-center gap-2 py-3">
             ویرایش کاربر {data.firstName + " " + data.lastName}
-           
           </DialogTitle>
         </DialogHeader>
 

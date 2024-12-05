@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { authStore } from "../../stores/auth";
+import { toast } from "../../hooks/use-toast";
 
 const index = () => {
   const { userData } = authStore((state) => state);
@@ -14,12 +15,28 @@ const index = () => {
     )}
 
 
+{userData ?(
       <Link
-        className="mx-auto mt-24 block w-max text-4xl"
-        to={"/adminPanel/users"}
-      >
-        پنل ادمین{" "}
-      </Link>
+      className="mx-auto mt-24 block w-max text-4xl"
+      to={"/adminPanel/users"}
+    >
+      پنل ادمین{" "}
+    </Link>
+) :(
+  <div
+  className="mx-auto mt-24 cursor-pointer block w-max text-4xl"
+  onClick={()=>{
+    toast({ 
+        variant: "danger",
+        title: "برای ورود به پنل ابتدا لاگین کنید ",
+ 
+    })
+  }}
+>
+  پنل ادمین{" "}
+</div>
+)}
+
       <Link className="mx-auto mt-10 block w-max text-4xl" to={"/login"}>
         ورود{" "}
       </Link>
@@ -27,7 +44,7 @@ const index = () => {
         className="mx-auto mt-10 block w-max text-4xl"
         to={"/martyr/packages"}
       >
-        ثبت پکیج{" "}
+        خرید پکیج{" "}
       </Link>
       <Link
         className="mx-auto mt-10 block w-max text-4xl"

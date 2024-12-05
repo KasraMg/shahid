@@ -16,7 +16,7 @@ interface UsersData {
   id: number;
   name: string;
   phone: string;
-  package: string;
+  package: string; 
   date: string;
   edit: any;
   delete: any;

@@ -79,7 +79,7 @@ const Step2 = () => {
                 (اگر عکس انتخاب نکنید، پروفایل همین خواهد ماند)
               </p>
               <div className="mt-10 flex w-full justify-between sm:mb-10">
-                <Link to={"/martyr/packages/step3"}>
+                <Link to={"/martyr/packages/invoice"}>
                   <Button className="px-7" variant="main">
                     مرحله بعد
                   </Button>
@@ -96,6 +96,6 @@ const Step2 = () => {
       </div>
     </div>
   );
-};
+}; 
 
 export default Step2;

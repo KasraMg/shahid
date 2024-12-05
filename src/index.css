@@ -145,7 +145,7 @@ input[type="number"] {
 }
 
 .sc-eUlrpB * {
-  font-size: 1.1rem !important;
+  font-size: 1.1rem ;
 }
 
 .rmdp-container {
@@ -175,4 +175,9 @@ input[type="number"] {
 }
 .swal-button--confirm:hover {
   background-color: black !important;
+}
+
+
+ .adminPanel-packages .ddvZdT{
+  font-size: .9rem !important;
 }

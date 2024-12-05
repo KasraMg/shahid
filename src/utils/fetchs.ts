@@ -37,3 +37,15 @@ export async function getSms() {
     return res.json();
   }
 }
+export async function getApPackages() {
+  const token = Cookies.get("martyrToken"); 
+  
+  if (token) {
+    const res = await fetch(`${apiUrl}/api/packages`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return res.json();
+  }
+}

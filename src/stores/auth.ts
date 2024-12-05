@@ -1,8 +1,14 @@
 import { create } from "zustand";
-import { devtools } from "zustand/middleware"; 
+import { devtools } from "zustand/middleware";
 
 export type State = {
-  userData: any | null;
+  userData: {
+    firstName: string;
+    lastName: string;
+    packageId:string;
+    phoneNumber:string;
+    role: string;
+  } | null;
   login: boolean;
   isPending: boolean;
 };
@@ -19,6 +25,7 @@ export const authStore = create<State & Action>()(
     isPending: true,
     setUserData: (val) => set(() => ({ userData: val }), false, "setUserData"),
     setLogin: (val) => set(() => ({ login: val }), false, "setLogin"),
-    setIsPending: (val) =>  set(() => ({ isPending: val }), false, "setIsPending"),
+    setIsPending: (val) =>
+      set(() => ({ isPending: val }), false, "setIsPending"),
   })),
 );

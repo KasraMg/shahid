@@ -19,12 +19,12 @@ const useDeleteData = (
       return await fetch(`${apiUrl}${url}`, {
         method: "DELETE",
         headers,
-      }).then((res) => res.json());
+      }).then((res) => res);
     },
     onSuccess: (data) => { 
       console.log(data);
       
-      if (successMsg && data.statusCode === 204) {
+      if (successMsg && (data.status === 204 || data.status === 200)) {
         toast({
           variant: "success",
           title: successMsg,
@@ -33,12 +33,13 @@ const useDeleteData = (
           queryClient.invalidateQueries({ queryKey: [queryUpdate] });
       }
     },
-    onError: () => { 
+    onError: (data) => { 
+      console.log(data); 
       toast({
         variant: "danger",
         title: "خطایی غیر منتظره رخ داد",
       });
-      location.reload();
+      // location.reload();
     },
   });
 

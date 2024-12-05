@@ -13,8 +13,11 @@ import { MdContentCopy, MdAttachMoney, MdLogout } from "react-icons/md";
 import { GiShutRose } from "react-icons/gi";
 import { LiaSmsSolid } from "react-icons/lia";
 import { FaBarcode, FaHome } from "react-icons/fa";
-
+import { authStore } from "../../../stores/auth";
+ 
 const Topbar = () => {
+  const { userData } = authStore((state) => state);
+
   return (
     <header
       dir="rtl"
@@ -115,7 +118,7 @@ const Topbar = () => {
           بِسْمِ اللّهِ الرَّحْمَنِ الرَّحيمِ
         </div>
         <button className="Record_your_memories relative rounded-[66.03px] border border-[#381B00] bg-transparent px-11 pb-2 pt-2 text-[19.52px] text-[#381B00] lg:rounded-[37.18px] lg:px-6 lg:pb-2 lg:pt-3 lg:text-[11px]">
-          شاهین مشکل گشا
+          {userData?.firstName + " " + userData?.lastName}
           <p className="absolute -right-2 -top-2 bg-[#e8d4ba] p-0.5 text-base text-orange-600 lg:text-xs">
             ادمین
           </p>
