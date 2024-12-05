@@ -15,15 +15,19 @@ const Login = ({
 }) => {
   const [regexError, setRegextError] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("09046417084");
+ 
 
-  const successFunc = (data: { statusCode: number,message:string }) => {
+  const successFunc = (data: { statusCode: number; message: string }) => {
     if (data.message === "این شماره تلفن ثبت نشده است.") {
       saveIntoLocalStorage("otpRegisterPhoneNumber", phoneNumber);
       setStep("register");
       localStorage.removeItem("otpLoginPhoneNumber");
-    } else if (data.statusCode === 411) {
+    } else if (
+      data.message === "شما با این شماره تلفن قبلاً ثبت نام کرده‌اید!"
+    ) {
       saveIntoLocalStorage("otpLoginPhoneNumber", phoneNumber);
       localStorage.removeItem("otpRegisterPhoneNumber");
+
       setStep("otp");
     } else if (data.statusCode === 409) {
       toast({

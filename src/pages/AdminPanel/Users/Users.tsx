@@ -3,23 +3,32 @@ import DataTable, { TableColumn } from "react-data-table-component";
 import Title from "../../../components/modules/title/Title";
 import { Button } from "../../../components/shadcn/ui/button";
 import Modal from "../../../components/templates/AdminPanel/users/Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GoDownload } from "react-icons/go";
+import useGetData from "../../../hooks/useGetData";
+import { getUsers } from "../../../utils/fetchs";
+import Loader from "../../../components/modules/loader/Loader";
+import { UserType } from "../../../types/users.";
+import useDeleteData from "../../../hooks/useDeleteData";
+import swal from "sweetalert";
 
 interface UsersData {
   id: number;
   name: string;
-  phone: any;
-  date: any;
-  edit:any;
-  delete: any; 
+  phone: string;
+  package: string;
+  date: string;
+  edit: any;
+  delete: any;
 }
 
 const Users = () => {
   const [filterText, setFilterText] = useState("");
 
-  const columns: TableColumn<UsersData>[]= [
-
+  const { data: users, isPending } = useGetData<any>(["users"], getUsers);
+  const [data, setData] = useState<UsersData[]>([]);
+  const [userSelectId, setUserSelectId] = useState<number>(0);
+  const columns: TableColumn<UsersData>[] = [
     {
       name: "نام کاربری",
       selector: (row: { name: string }) => row.name,
@@ -42,108 +51,9 @@ const Users = () => {
     },
   ];
 
-  const data = [
-    {
-      id: 1,
-      name: "شاهین مشکل گشا",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-    {
-      id: 2,
-      name: "رضا مرادی",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-    {
-      id: 3,
-      name: "مریم مشکل گشا",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-    {
-      id: 4,
-      name: "محمد زارع",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-    {
-      id: 5,
-      name: "فریدون شهریاری",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-    {
-      id: 6,
-      name: "نفیسه کیوانی",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-    {
-      id: 7,
-      name: "دنیا رضایی",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-    {
-      id: 8,
-      name: "شهرام مرادی",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-    {
-      id: 9,
-      name: "کریم زراعتی",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-    {
-      id: 10,
-      name: "رها سلطانی",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-    {
-      id: 10,
-      name: "شاهرخ ماهانی",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-    {
-      id: 10,
-      name: "سیاوش باقری",
-      phone: "09046417084",
-      date: "1403/05/01",
-      edit: <Modal />,
-      delete: <Button variant={"danger"}>حذف</Button>,
-    },
-  ];
-
   const filteredData = data.filter((item) => item.name.includes(filterText));
 
-  const exportCSV = (data: any[], columns: any[]) => {
+  const exportCSV = (data: UsersData[], columns: any[]) => {
     const headers = columns.map((col) => col.name).join(",");
     const rows = data.map((row) =>
       columns.map((col) => col.selector(row)).join(","),
@@ -162,12 +72,54 @@ const Users = () => {
     link.click();
     document.body.removeChild(link);
   };
+
+  useEffect(() => {
+    console.log(users);
+    if (users?.data) {
+      const tableData: unknown = users.data.map((user: UserType) => ({
+        id: user.id,
+        name: user.firstName + " " + user.lastName,
+        phone: user.phoneNumber,
+        package: user.packageId ? "دارد" : "ندارد",
+        date: "1403/05/01",
+        edit: <Modal data={user}/>,
+        delete: (
+          <Button
+            onClick={() => {
+              setUserSelectId(user.id);
+              swal({
+                title: "آیا از حذف کاربر اطمینان دارید؟",
+                icon: "warning",
+                buttons: ["نه", "آره"],
+              }).then((res) => {
+                if (res) {
+                  deleteHandlerMutation();
+                }
+              });
+            }}
+            variant={"danger"}
+          >
+            حذف
+          </Button>
+        ),
+      }));
+      setData(tableData as UsersData[]);
+    }
+  }, [users]);
+
+  const { mutate: deleteHandlerMutation, isPending: deleteHandlerPending } =
+    useDeleteData(
+      `/api/UserManagementControler/${userSelectId}`,
+      "کاربر با موفقیت حذف شد",
+      "users",
+    );
+
   return (
     <Layout>
       <Title className="sm:justify-center" title={"مدیریت کاربران"} />
       <div className="mb-4">
         <input
-          type="text" 
+          type="text"
           placeholder="جستجوی نام کاربری"
           value={filterText}
           onChange={(e) => setFilterText(e.target.value)}
@@ -175,10 +127,13 @@ const Users = () => {
         />
       </div>
 
-      <div className="mb-4 mr-auto block sm:ml-auto w-max">
-        <Button className="px-10 sm:px-4" onClick={() => exportCSV(filteredData, columns)}>
-         اکسپورت
-         <GoDownload/>
+      <div className="mb-4 mr-auto block w-max sm:ml-auto">
+        <Button
+          className="px-10 sm:px-4"
+          onClick={() => exportCSV(filteredData, columns)}
+        >
+          اکسپورت
+          <GoDownload />
         </Button>
       </div>
 
@@ -193,6 +148,8 @@ const Users = () => {
           }
         />
       </div>
+
+      {isPending || (deleteHandlerPending && <Loader />)}
     </Layout>
   );
 };

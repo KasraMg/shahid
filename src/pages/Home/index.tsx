@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
+import { authStore } from "../../stores/auth";
 
 const index = () => {
+  const { userData } = authStore((state) => state);
+
   return (
     <div>
+
+    {userData &&(
+      <>
+      <p className="text-center mt-5">{userData.firstName } {userData.lastName }</p>
+      </>
+    )}
+
+
       <Link
         className="mx-auto mt-24 block w-max text-4xl"
         to={"/adminPanel/users"}

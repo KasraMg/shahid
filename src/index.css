@@ -29,7 +29,6 @@
   box-sizing: border-box;
   font-family: "BNAZANIN";
   font-size: 1.1rem;
-
 }
 html {
   overflow-x: hidden;
@@ -74,13 +73,12 @@ th {
   padding: 12px 8px;
 }
 .invoice_table th,
-.invoice_table td{
+.invoice_table td {
   border: 0;
-} 
+}
 .invoice_table tr:nth-child(even) {
   background-color: #fff !important;
-
- }
+}
 .invoice_table tr:nth-child(odd) {
   background-color: #f2f2f291;
 }
@@ -154,9 +152,27 @@ input[type="number"] {
   width: 100%;
 }
 
+.register_martyr .rmdp-input {
+  width: 100%;
+  padding-bottom: 13px;
+  height: 30px;
+}
 
-.register_martyr .rmdp-input{
-width: 100%;
-padding-bottom: 13px;
-height: 30px;
+.swal-footer {
+  text-align: center;
+}
+
+.swal-modal {
+  background: #e8d4ba;
+}
+.swal-title {
+  color: black;
+}
+.swal-icon--warning__body,
+.swal-icon--warning__dot,
+.swal-button--confirm {
+  background-color: black;
+}
+.swal-button--confirm:hover {
+  background-color: black !important;
 }

@@ -1,19 +1,19 @@
+import usePostData from "../../../../../hooks/usePostData";
 import { Button } from "../../../../shadcn/ui/button";
-// import usePostData from "@/src/hooks/usePostData";
-// import { getFromLocalStorage } from "../../../../../utils/utils";
-import  { useEffect, useState } from "react";
+import { getFromLocalStorage } from "../../../../../utils/utils";
+import { useEffect, useState } from "react";
+import { ButtonLoader } from "../../../../modules/loader/Loader";
 
 const Timer = () => {
-  // const otpLoginPhoneNumber = getFromLocalStorage("otpLoginPhoneNumber");
-  // const otpRegisterPhoneNumber = getFromLocalStorage("otpRegisterPhoneNumber");
-  // const phoneNumber = otpLoginPhoneNumber || otpRegisterPhoneNumber;
+  const otpLoginPhoneNumber = getFromLocalStorage("otpLoginPhoneNumber");
+  const otpRegisterPhoneNumber = getFromLocalStorage("otpRegisterPhoneNumber");
+  const phoneNumber = otpLoginPhoneNumber || otpRegisterPhoneNumber;
   const [timer, setTimer] = useState<number>(0);
 
-  // const { mutate: resendCode } = usePostData<any>(
-  //   `/resendCode/${phoneNumber}`,
-  //   null,
-  //   false,
-  // );
+  const { mutate: resendCode, isPending } = usePostData<{
+    phoneNumber: string;
+  }>("/api/user/CheckPhoneNumber", null, false);
+
   useEffect(() => {
     let interval: any;
     if (timer > 0) {
@@ -40,7 +40,7 @@ const Timer = () => {
       "otpResendTimer",
       (Math.floor(Date.now() / 1000) + 59).toString(),
     );
-    // resendCode({});
+    resendCode({ phoneNumber });
   };
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const Timer = () => {
           className="w-full justify-center !rounded-sm !px-4 text-sm"
           variant={"main"}
         >
-          ارسال دوباره کد
+          {isPending ? <ButtonLoader /> : "ارسال دوباره کد"}
         </Button>
       )}
     </div>

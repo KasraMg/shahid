@@ -1,13 +1,17 @@
 import { Button } from "../../../..//shadcn/ui/button";
-// import usePostData from "@/src/hooks/usePostData";
-import { getFromLocalStorage, saveIntoLocalStorage } from "../../../../../utils/utils";
+import {
+  getFromLocalStorage, 
+} from "../../../../../utils/utils";
 import { registerSchema } from "../../../../../validations/rules";
 import { useFormik } from "formik";
 import React, { useState } from "react";
 import { LuEye } from "react-icons/lu";
 import usePostData from "../../../../../hooks/usePostData";
 import { toast } from "../../../../../hooks/use-toast";
-// import { toast } from "../../../../../hooks/use-toast";
+import { ButtonLoader } from "../../../../modules/loader/Loader";
+import Cookies from "js-cookie";
+import { useQueryClient } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 
 interface formValues {
   firstName: string;
@@ -21,14 +25,27 @@ const Register = ({
 }: {
   setStep: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-  const successFunc = (data: { statusCode: number }) => {
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
+  const successFunc = (data: {
+    statusCode: number;
+    massage: string;
+    token: string;
+  }) => {
+    console.log(data);
+
     if (data.statusCode === 200) {
       toast({
         variant: "success",
-        title: "اطلاعات با موفقیت ثبت شد",
+        title: "اطلاعات با موفقیت ثبت شد  ",
       });
-      setStep("otp");
-      saveIntoLocalStorage("registerUserData", formHandler.values);
+      Cookies.set("martyrToken", data.token, {
+        expires: 9999999,
+        path: "",
+      });
+      localStorage.removeItem('otpRegisterPhoneNumber')
+      queryClient.invalidateQueries({ queryKey: ["auth"] });
+      navigate("/");
       formHandler.resetForm();
     } else {
       toast({
@@ -59,7 +76,7 @@ const Register = ({
         confirmPassword: values.confirmPassword,
         phoneNumber: values.phone,
       };
-      mutation(data as any); 
+      mutation(data as any);
     },
     validationSchema: registerSchema,
   });
@@ -166,12 +183,11 @@ const Register = ({
       <Button
         type="submit"
         onClick={(event) => submitHandler(event)}
-        className="mx-auto mt-5 !block h-[36px] w-max !rounded-full !px-12 text-center"
+        className="mx-auto mt-5 !block h-[40px] w-max !rounded-full !px-12 text-center"
         variant={"main"}
         disabled={!formHandler.isValid || !formHandler.dirty}
       >
-        {/* {isPending ? <ButtonLoader /> : "ثبت نام"} */}
-        ثبت نام
+        {isPending ? <ButtonLoader /> : "ثبت نام"}
       </Button>
     </form>
   );
