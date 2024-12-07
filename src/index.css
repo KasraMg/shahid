@@ -167,6 +167,7 @@ input[type="number"] {
 }
 .swal-title {
   color: black;
+  direction: rtl;
 }
 .swal-icon--warning__body,
 .swal-icon--warning__dot,
